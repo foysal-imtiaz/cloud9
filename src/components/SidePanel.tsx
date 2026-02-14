@@ -58,7 +58,7 @@ function AirPollution({ coords }: Props) {
           </Tooltip>
         </div>
         <div className="flex items-center gap-2">
-          <span className="text-2xl font-bold">{data.list[0].main.aqi}</span>
+          <span className="text-2xl font-semibold">{data.list[0].main.aqi}</span>
           <span className={clsx(
             "px-2 py-0.5 rounded text-xs font-medium",
             data.list[0].main.aqi === 1 && "bg-green-500",
@@ -117,7 +117,7 @@ function AirPollution({ coords }: Props) {
           >
             <div className="flex justify-between">
               <div className="flex items-center gap-2">
-                <span className="text-sm font-bold capitalize">{key}</span>
+                <span className="text-sm font-semibold capitalize">{key}</span>
                 <Tooltip>
                   <TooltipTrigger>
                     <Information className="size-4" />

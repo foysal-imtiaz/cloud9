@@ -12,15 +12,15 @@ export default function MapLegend({ mapType }: Props) {
     .join(", ")
 
   return (
-    <div className="absolute top-4 right-4 z-1000 w-48 xs:w-96 rounded-xl shadow-lg p-4 bg-background/50 border border-accent/70 flex flex-col gap-4">
-      <h3 className="text-sm font-semibold text-foreground">{data.title}</h3>
+    <div className="absolute top-3 right-3 z-1000 w-28 xs:w-72 rounded-xl shadow-lg p-2 xs:p-3 bg-background/50 border border-accent/70 flex flex-col gap-2 xs:gap-3">
+      <h3 className="text-xs xs:text-sm font-semibold text-foreground">{data.title}</h3>
       <div
-        className="w-full h-6 rounded-xl border border-accent/70"
+        className="w-full h-4 xs:h-5 rounded-xl border border-accent/70"
         style={{
           background: `linear-gradient(to right, ${gradientStops})`,
         }}
       />
-      <div className="flex justify-between text-xs text-foreground">
+      <div className="flex justify-between text-[10px] xs:text-xs text-foreground">
         <span>
           {data.stops[0].value} {data.unit}
         </span>
