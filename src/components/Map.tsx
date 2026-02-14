@@ -4,6 +4,18 @@ import type { Coords } from "../types"
 import { useEffect } from "react"
 import { MaptilerLayer } from "@maptiler/leaflet-maptilersdk"
 import { useTheme } from "./ThemeProvider"
+import L from "leaflet"
+import markerIcon2x from "leaflet/dist/images/marker-icon-2x.png"
+import markerIcon from "leaflet/dist/images/marker-icon.png"
+import markerShadow from "leaflet/dist/images/marker-shadow.png"
+
+// Fix Leaflet default marker icons not loading in production builds
+delete (L.Icon.Default.prototype as any)._getIconUrl
+L.Icon.Default.mergeOptions({
+  iconUrl: markerIcon,
+  iconRetinaUrl: markerIcon2x,
+  shadowUrl: markerShadow,
+})
 
 const API_KEY = import.meta.env.VITE_API_KEY
 
